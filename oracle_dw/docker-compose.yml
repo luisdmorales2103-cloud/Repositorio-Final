@@ -1,0 +1,57 @@
+# ==============================================================================
+# PINTUCO ENTERPRISE DATA WAREHOUSE - DOCKER COMPOSE
+# ==============================================================================
+# Orquesta la aplicación web y un contenedor opcional de Oracle Database 23c Free
+# para pruebas locales o despliegue corporativo en servidores AWS EC2 / ECS.
+# ==============================================================================
+version: '3.8'
+
+services:
+  # Servidor Web + Backend Express + Data Warehouse Ingestion Worker
+  app:
+    build:
+      context: ..
+      dockerfile: oracle_dw/Dockerfile
+    container_name: pintuco_dw_app
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - NODE_ENV=production
+      # Configuración de Oracle Database (Thin Mode nativo o Thick Mode)
+      - ORACLE_USER=${ORACLE_USER:-PINTUCO_DW}
+      - ORACLE_PASSWORD=${ORACLE_PASSWORD:-OracleSecurePassword2026!}
+      - ORACLE_CONNECT_STRING=${ORACLE_CONNECT_STRING:-oracle_db:1521/FREEPDB1}
+      - ORACLE_POOL_MIN=2
+      - ORACLE_POOL_MAX=10
+      - ORACLE_POOL_INCREMENT=2
+      - ORACLE_TIMEOUT=60
+      # Almacenamiento corporativo de archivos Excel/CSV
+      - DW_STORAGE_DIR=/app/uploads/dw
+      - MAX_UPLOAD_SIZE_MB=50
+    volumes:
+      - dw_uploads_volume:/app/uploads/dw
+    depends_on:
+      - oracle_db
+
+  # Base de Datos Oracle Database 23c Free (Esquema de pruebas y desarrollo)
+  oracle_db:
+    image: container-registry.oracle.com/database/free:latest
+    container_name: pintuco_oracle_dw
+    restart: unless-stopped
+    ports:
+      - "1521:1521"
+    environment:
+      - ORACLE_PWD=OracleSecurePassword2026!
+      - ORACLE_CHARACTERSET=AL32UTF8
+    volumes:
+      - oracle_data_volume:/opt/oracle/oradata
+      - ./schema_oracle_dw.sql:/docker-entrypoint-initdb.d/01_schema.sql:ro
+      - ./seed_test_data.sql:/docker-entrypoint-initdb.d/02_seed.sql:ro
+
+volumes:
+  dw_uploads_volume:
+    driver: local
+  oracle_data_volume:
+    driver: local

@@ -1,0 +1,735 @@
+{
+  "proyectos": [
+    {
+      "proyectoId": "proj-pintuco-corp-001",
+      "codigoProyecto": "PRJ-2026-PINTUCO-ANALYTICS",
+      "nombre": "Control Operacional y Ventas Pintuco Colombia",
+      "descripcion": "Data warehouse analítico de producción, ventas por departamento y rendimiento de recubrimientos.",
+      "categoria": "VENTAS_Y_OPERACIONES",
+      "estado": "ACTIVO",
+      "creadoPor": "salgadoarevaloleidy@gmail.com",
+      "totalDatasets": 1,
+      "totalRegistros": 12,
+      "fechaCreacion": "2026-11-10T14:54:34.684Z",
+      "fechaActualizacion": "2026-11-10T14:54:34.684Z"
+    },
+    {
+      "proyectoId": "proj-pintuco-calidad-002",
+      "codigoProyecto": "PRJ-2026-LAB-CALIDAD",
+      "nombre": "Laboratorio de Control de Calidad y Rendimiento (m²)",
+      "descripcion": "Estudio analítico de espesor de película seca, tiempos de secado y rendimiento real en obra.",
+      "categoria": "CALIDAD_I+D",
+      "estado": "ACTIVO",
+      "creadoPor": "salgadoarevaloleidy@gmail.com",
+      "totalDatasets": 0,
+      "totalRegistros": 0,
+      "fechaCreacion": "2026-11-10T14:54:34.684Z",
+      "fechaActualizacion": "2026-11-10T14:54:34.684Z"
+    }
+  ],
+  "accesos": [
+    {
+      "accesoId": "acc-001",
+      "proyectoId": "proj-pintuco-corp-001",
+      "usuarioEmail": "salgadoarevaloleidy@gmail.com",
+      "usuarioNombre": "Leidy Salgado (Super Admin)",
+      "rol": "ADMINISTRADOR",
+      "puedeCargar": true,
+      "puedeEditar": true,
+      "puedeExportar": true,
+      "fechaAsignacion": "2026-11-10T14:54:34.684Z"
+    },
+    {
+      "accesoId": "acc-002",
+      "proyectoId": "proj-pintuco-corp-001",
+      "usuarioEmail": "estudiante.analitica@universidad.edu.co",
+      "usuarioNombre": "Estudiante Investigador",
+      "rol": "ESTUDIANTE",
+      "puedeCargar": true,
+      "puedeEditar": false,
+      "puedeExportar": true,
+      "fechaAsignacion": "2026-11-10T14:54:34.684Z"
+    },
+    {
+      "accesoId": "acc-003",
+      "proyectoId": "proj-pintuco-calidad-002",
+      "usuarioEmail": "salgadoarevaloleidy@gmail.com",
+      "usuarioNombre": "Leidy Salgado (Super Admin)",
+      "rol": "ADMINISTRADOR",
+      "puedeCargar": true,
+      "puedeEditar": true,
+      "puedeExportar": true,
+      "fechaAsignacion": "2026-11-10T14:54:34.684Z"
+    }
+  ],
+  "datasets": [
+    {
+      "datasetId": "dataset-demo-ventas-01",
+      "proyectoId": "proj-pintuco-corp-001",
+      "nombreDataset": "Ventas y Cobertura Nacional Pintuco 2026",
+      "descripcion": "Dataset representativo de galones vendidos, facturación en COP y cobertura estimada en m².",
+      "nombreArchivoOrig": "ventas_cobertura_pintuco_2026.xlsx",
+      "storagePathOrig": "/app/applet/uploads/dw/ventas_cobertura_pintuco_2026.xlsx",
+      "formatoArchivo": "XLSX",
+      "hojaSeleccionada": "Ventas_2026",
+      "hojasDisponibles": [
+        "Ventas_2026"
+      ],
+      "totalFilas": 12,
+      "totalColumnas": 6,
+      "tamanoBytes": 45280,
+      "version": 1,
+      "estado": "PROCESADO",
+      "fechaCarga": "2026-11-10T14:54:34.685Z",
+      "cargadoPor": "salgadoarevaloleidy@gmail.com"
+    }
+  ],
+  "columnas": [
+    {
+      "columnaId": "col-01",
+      "datasetId": "dataset-demo-ventas-01",
+      "proyectoId": "proj-pintuco-corp-001",
+      "nombreOriginal": "Mes",
+      "nombreNormalizado": "mes",
+      "indicePosicion": 0,
+      "tipoDato": "VARCHAR",
+      "esMetrica": false,
+      "esDimension": true,
+      "totalNulos": 0,
+      "totalDistintos": 6,
+      "columnaTypedMap": "VARCHAR_01"
+    },
+    {
+      "columnaId": "col-02",
+      "datasetId": "dataset-demo-ventas-01",
+      "proyectoId": "proj-pintuco-corp-001",
+      "nombreOriginal": "Ciudad",
+      "nombreNormalizado": "ciudad",
+      "indicePosicion": 1,
+      "tipoDato": "VARCHAR",
+      "esMetrica": false,
+      "esDimension": true,
+      "totalNulos": 0,
+      "totalDistintos": 6,
+      "columnaTypedMap": "VARCHAR_02"
+    },
+    {
+      "columnaId": "col-03",
+      "datasetId": "dataset-demo-ventas-01",
+      "proyectoId": "proj-pintuco-corp-001",
+      "nombreOriginal": "Categoria",
+      "nombreNormalizado": "categoria",
+      "indicePosicion": 2,
+      "tipoDato": "VARCHAR",
+      "esMetrica": false,
+      "esDimension": true,
+      "totalNulos": 0,
+      "totalDistintos": 4,
+      "columnaTypedMap": "VARCHAR_03"
+    },
+    {
+      "columnaId": "col-04",
+      "datasetId": "dataset-demo-ventas-01",
+      "proyectoId": "proj-pintuco-corp-001",
+      "nombreOriginal": "Galones",
+      "nombreNormalizado": "galones",
+      "indicePosicion": 3,
+      "tipoDato": "NUMERIC",
+      "esMetrica": true,
+      "esDimension": false,
+      "totalNulos": 0,
+      "totalDistintos": 12,
+      "valorMin": 760,
+      "valorMax": 1650,
+      "valorPromedio": 1169,
+      "valorSuma": 14030,
+      "columnaTypedMap": "NUMERIC_01"
+    },
+    {
+      "columnaId": "col-05",
+      "datasetId": "dataset-demo-ventas-01",
+      "proyectoId": "proj-pintuco-corp-001",
+      "nombreOriginal": "VentasCOP",
+      "nombreNormalizado": "ventas_cop",
+      "indicePosicion": 4,
+      "tipoDato": "CURRENCY",
+      "esMetrica": true,
+      "esDimension": false,
+      "totalNulos": 0,
+      "totalDistintos": 12,
+      "valorMin": 114000000,
+      "valorMax": 280500000,
+      "valorPromedio": 187741666,
+      "valorSuma": 2252900000,
+      "columnaTypedMap": "NUMERIC_02"
+    },
+    {
+      "columnaId": "col-06",
+      "datasetId": "dataset-demo-ventas-01",
+      "proyectoId": "proj-pintuco-corp-001",
+      "nombreOriginal": "CoberturaM2",
+      "nombreNormalizado": "cobertura_m2",
+      "indicePosicion": 5,
+      "tipoDato": "NUMERIC",
+      "esMetrica": true,
+      "esDimension": false,
+      "totalNulos": 0,
+      "totalDistintos": 12,
+      "valorMin": 38000,
+      "valorMax": 82500,
+      "valorPromedio": 58458,
+      "valorSuma": 701500,
+      "columnaTypedMap": "NUMERIC_03"
+    }
+  ],
+  "cargas": [
+    {
+      "cargaId": "carga-demo-01",
+      "proyectoId": "proj-pintuco-corp-001",
+      "datasetId": "dataset-demo-ventas-01",
+      "usuarioCarga": "salgadoarevaloleidy@gmail.com",
+      "nombreArchivo": "ventas_cobertura_pintuco_2026.xlsx",
+      "formato": "XLSX",
+      "estado": "EXITOSO",
+      "totalLeidas": 12,
+      "totalValidas": 12,
+      "totalRechazadas": 0,
+      "tiempoDuracionMs": 245,
+      "fechaInicio": "2026-11-10T14:54:34.685Z",
+      "fechaFin": "2026-11-10T14:54:34.685Z"
+    }
+  ],
+  "filas": [
+    {
+      "filaId": "fila-dataset-demo-ventas-01-1",
+      "proyectoId": "proj-pintuco-corp-001",
+      "datasetId": "dataset-demo-ventas-01",
+      "cargaId": "carga-demo-01",
+      "numeroFila": 1,
+      "capa": "ANALYTICS",
+      "payloadRaw": {
+        "Mes": "Enero",
+        "Ciudad": "Bogotá D.C.",
+        "Categoria": "Hogar",
+        "Galones": 1250,
+        "VentasCOP": 187500000,
+        "CoberturaM2": 62500
+      },
+      "payloadStaging": {
+        "Mes": "Enero",
+        "Ciudad": "Bogotá D.C.",
+        "Categoria": "Hogar",
+        "Galones": 1250,
+        "VentasCOP": 187500000,
+        "CoberturaM2": 62500
+      },
+      "varchar_01": "Enero",
+      "varchar_02": "Bogotá D.C.",
+      "varchar_03": "Hogar",
+      "numeric_01": 1250,
+      "numeric_02": 187500000,
+      "numeric_03": 62500,
+      "estadoValidacion": "VALIDA",
+      "fechaRegistro": "2026-11-10T14:54:34.685Z"
+    },
+    {
+      "filaId": "fila-dataset-demo-ventas-01-2",
+      "proyectoId": "proj-pintuco-corp-001",
+      "datasetId": "dataset-demo-ventas-01",
+      "cargaId": "carga-demo-01",
+      "numeroFila": 2,
+      "capa": "ANALYTICS",
+      "payloadRaw": {
+        "Mes": "Enero",
+        "Ciudad": "Medellín",
+        "Categoria": "Construcción",
+        "Galones": 980,
+        "VentasCOP": 156800000,
+        "CoberturaM2": 49000
+      },
+      "payloadStaging": {
+        "Mes": "Enero",
+        "Ciudad": "Medellín",
+        "Categoria": "Construcción",
+        "Galones": 980,
+        "VentasCOP": 156800000,
+        "CoberturaM2": 49000
+      },
+      "varchar_01": "Enero",
+      "varchar_02": "Medellín",
+      "varchar_03": "Construcción",
+      "numeric_01": 980,
+      "numeric_02": 156800000,
+      "numeric_03": 49000,
+      "estadoValidacion": "VALIDA",
+      "fechaRegistro": "2026-11-10T14:54:34.685Z"
+    },
+    {
+      "filaId": "fila-dataset-demo-ventas-01-3",
+      "proyectoId": "proj-pintuco-corp-001",
+      "datasetId": "dataset-demo-ventas-01",
+      "cargaId": "carga-demo-01",
+      "numeroFila": 3,
+      "capa": "ANALYTICS",
+      "payloadRaw": {
+        "Mes": "Febrero",
+        "Ciudad": "Bogotá D.C.",
+        "Categoria": "Industrial",
+        "Galones": 1420,
+        "VentasCOP": 241400000,
+        "CoberturaM2": 71000
+      },
+      "payloadStaging": {
+        "Mes": "Febrero",
+        "Ciudad": "Bogotá D.C.",
+        "Categoria": "Industrial",
+        "Galones": 1420,
+        "VentasCOP": 241400000,
+        "CoberturaM2": 71000
+      },
+      "varchar_01": "Febrero",
+      "varchar_02": "Bogotá D.C.",
+      "varchar_03": "Industrial",
+      "numeric_01": 1420,
+      "numeric_02": 241400000,
+      "numeric_03": 71000,
+      "estadoValidacion": "VALIDA",
+      "fechaRegistro": "2026-11-10T14:54:34.685Z"
+    },
+    {
+      "filaId": "fila-dataset-demo-ventas-01-4",
+      "proyectoId": "proj-pintuco-corp-001",
+      "datasetId": "dataset-demo-ventas-01",
+      "cargaId": "carga-demo-01",
+      "numeroFila": 4,
+      "capa": "ANALYTICS",
+      "payloadRaw": {
+        "Mes": "Febrero",
+        "Ciudad": "Cali",
+        "Categoria": "Hogar",
+        "Galones": 850,
+        "VentasCOP": 127500000,
+        "CoberturaM2": 42500
+      },
+      "payloadStaging": {
+        "Mes": "Febrero",
+        "Ciudad": "Cali",
+        "Categoria": "Hogar",
+        "Galones": 850,
+        "VentasCOP": 127500000,
+        "CoberturaM2": 42500
+      },
+      "varchar_01": "Febrero",
+      "varchar_02": "Cali",
+      "varchar_03": "Hogar",
+      "numeric_01": 850,
+      "numeric_02": 127500000,
+      "numeric_03": 42500,
+      "estadoValidacion": "VALIDA",
+      "fechaRegistro": "2026-11-10T14:54:34.685Z"
+    },
+    {
+      "filaId": "fila-dataset-demo-ventas-01-5",
+      "proyectoId": "proj-pintuco-corp-001",
+      "datasetId": "dataset-demo-ventas-01",
+      "cargaId": "carga-demo-01",
+      "numeroFila": 5,
+      "capa": "ANALYTICS",
+      "payloadRaw": {
+        "Mes": "Marzo",
+        "Ciudad": "Barranquilla",
+        "Categoria": "Construcción",
+        "Galones": 1100,
+        "VentasCOP": 176000000,
+        "CoberturaM2": 55000
+      },
+      "payloadStaging": {
+        "Mes": "Marzo",
+        "Ciudad": "Barranquilla",
+        "Categoria": "Construcción",
+        "Galones": 1100,
+        "VentasCOP": 176000000,
+        "CoberturaM2": 55000
+      },
+      "varchar_01": "Marzo",
+      "varchar_02": "Barranquilla",
+      "varchar_03": "Construcción",
+      "numeric_01": 1100,
+      "numeric_02": 176000000,
+      "numeric_03": 55000,
+      "estadoValidacion": "VALIDA",
+      "fechaRegistro": "2026-11-10T14:54:34.685Z"
+    },
+    {
+      "filaId": "fila-dataset-demo-ventas-01-6",
+      "proyectoId": "proj-pintuco-corp-001",
+      "datasetId": "dataset-demo-ventas-01",
+      "cargaId": "carga-demo-01",
+      "numeroFila": 6,
+      "capa": "ANALYTICS",
+      "payloadRaw": {
+        "Mes": "Marzo",
+        "Ciudad": "Medellín",
+        "Categoria": "Hogar",
+        "Galones": 1340,
+        "VentasCOP": 201000000,
+        "CoberturaM2": 67000
+      },
+      "payloadStaging": {
+        "Mes": "Marzo",
+        "Ciudad": "Medellín",
+        "Categoria": "Hogar",
+        "Galones": 1340,
+        "VentasCOP": 201000000,
+        "CoberturaM2": 67000
+      },
+      "varchar_01": "Marzo",
+      "varchar_02": "Medellín",
+      "varchar_03": "Hogar",
+      "numeric_01": 1340,
+      "numeric_02": 201000000,
+      "numeric_03": 67000,
+      "estadoValidacion": "VALIDA",
+      "fechaRegistro": "2026-11-10T14:54:34.685Z"
+    },
+    {
+      "filaId": "fila-dataset-demo-ventas-01-7",
+      "proyectoId": "proj-pintuco-corp-001",
+      "datasetId": "dataset-demo-ventas-01",
+      "cargaId": "carga-demo-01",
+      "numeroFila": 7,
+      "capa": "ANALYTICS",
+      "payloadRaw": {
+        "Mes": "Abril",
+        "Ciudad": "Bogotá D.C.",
+        "Categoria": "Automotriz",
+        "Galones": 920,
+        "VentasCOP": 165600000,
+        "CoberturaM2": 46000
+      },
+      "payloadStaging": {
+        "Mes": "Abril",
+        "Ciudad": "Bogotá D.C.",
+        "Categoria": "Automotriz",
+        "Galones": 920,
+        "VentasCOP": 165600000,
+        "CoberturaM2": 46000
+      },
+      "varchar_01": "Abril",
+      "varchar_02": "Bogotá D.C.",
+      "varchar_03": "Automotriz",
+      "numeric_01": 920,
+      "numeric_02": 165600000,
+      "numeric_03": 46000,
+      "estadoValidacion": "VALIDA",
+      "fechaRegistro": "2026-11-10T14:54:34.685Z"
+    },
+    {
+      "filaId": "fila-dataset-demo-ventas-01-8",
+      "proyectoId": "proj-pintuco-corp-001",
+      "datasetId": "dataset-demo-ventas-01",
+      "cargaId": "carga-demo-01",
+      "numeroFila": 8,
+      "capa": "ANALYTICS",
+      "payloadRaw": {
+        "Mes": "Abril",
+        "Ciudad": "Bucaramanga",
+        "Categoria": "Hogar",
+        "Galones": 760,
+        "VentasCOP": 114000000,
+        "CoberturaM2": 38000
+      },
+      "payloadStaging": {
+        "Mes": "Abril",
+        "Ciudad": "Bucaramanga",
+        "Categoria": "Hogar",
+        "Galones": 760,
+        "VentasCOP": 114000000,
+        "CoberturaM2": 38000
+      },
+      "varchar_01": "Abril",
+      "varchar_02": "Bucaramanga",
+      "varchar_03": "Hogar",
+      "numeric_01": 760,
+      "numeric_02": 114000000,
+      "numeric_03": 38000,
+      "estadoValidacion": "VALIDA",
+      "fechaRegistro": "2026-11-10T14:54:34.685Z"
+    },
+    {
+      "filaId": "fila-dataset-demo-ventas-01-9",
+      "proyectoId": "proj-pintuco-corp-001",
+      "datasetId": "dataset-demo-ventas-01",
+      "cargaId": "carga-demo-01",
+      "numeroFila": 9,
+      "capa": "ANALYTICS",
+      "payloadRaw": {
+        "Mes": "Mayo",
+        "Ciudad": "Medellín",
+        "Categoria": "Industrial",
+        "Galones": 1650,
+        "VentasCOP": 280500000,
+        "CoberturaM2": 82500
+      },
+      "payloadStaging": {
+        "Mes": "Mayo",
+        "Ciudad": "Medellín",
+        "Categoria": "Industrial",
+        "Galones": 1650,
+        "VentasCOP": 280500000,
+        "CoberturaM2": 82500
+      },
+      "varchar_01": "Mayo",
+      "varchar_02": "Medellín",
+      "varchar_03": "Industrial",
+      "numeric_01": 1650,
+      "numeric_02": 280500000,
+      "numeric_03": 82500,
+      "estadoValidacion": "VALIDA",
+      "fechaRegistro": "2026-11-10T14:54:34.685Z"
+    },
+    {
+      "filaId": "fila-dataset-demo-ventas-01-10",
+      "proyectoId": "proj-pintuco-corp-001",
+      "datasetId": "dataset-demo-ventas-01",
+      "cargaId": "carga-demo-01",
+      "numeroFila": 10,
+      "capa": "ANALYTICS",
+      "payloadRaw": {
+        "Mes": "Mayo",
+        "Ciudad": "Cali",
+        "Categoria": "Construcción",
+        "Galones": 1040,
+        "VentasCOP": 166400000,
+        "CoberturaM2": 52000
+      },
+      "payloadStaging": {
+        "Mes": "Mayo",
+        "Ciudad": "Cali",
+        "Categoria": "Construcción",
+        "Galones": 1040,
+        "VentasCOP": 166400000,
+        "CoberturaM2": 52000
+      },
+      "varchar_01": "Mayo",
+      "varchar_02": "Cali",
+      "varchar_03": "Construcción",
+      "numeric_01": 1040,
+      "numeric_02": 166400000,
+      "numeric_03": 52000,
+      "estadoValidacion": "VALIDA",
+      "fechaRegistro": "2026-11-10T14:54:34.685Z"
+    },
+    {
+      "filaId": "fila-dataset-demo-ventas-01-11",
+      "proyectoId": "proj-pintuco-corp-001",
+      "datasetId": "dataset-demo-ventas-01",
+      "cargaId": "carga-demo-01",
+      "numeroFila": 11,
+      "capa": "ANALYTICS",
+      "payloadRaw": {
+        "Mes": "Junio",
+        "Ciudad": "Bogotá D.C.",
+        "Categoria": "Hogar",
+        "Galones": 1580,
+        "VentasCOP": 237000000,
+        "CoberturaM2": 79000
+      },
+      "payloadStaging": {
+        "Mes": "Junio",
+        "Ciudad": "Bogotá D.C.",
+        "Categoria": "Hogar",
+        "Galones": 1580,
+        "VentasCOP": 237000000,
+        "CoberturaM2": 79000
+      },
+      "varchar_01": "Junio",
+      "varchar_02": "Bogotá D.C.",
+      "varchar_03": "Hogar",
+      "numeric_01": 1580,
+      "numeric_02": 237000000,
+      "numeric_03": 79000,
+      "estadoValidacion": "VALIDA",
+      "fechaRegistro": "2026-11-10T14:54:34.685Z"
+    },
+    {
+      "filaId": "fila-dataset-demo-ventas-01-12",
+      "proyectoId": "proj-pintuco-corp-001",
+      "datasetId": "dataset-demo-ventas-01",
+      "cargaId": "carga-demo-01",
+      "numeroFila": 12,
+      "capa": "ANALYTICS",
+      "payloadRaw": {
+        "Mes": "Junio",
+        "Ciudad": "Cartagena",
+        "Categoria": "Industrial",
+        "Galones": 1120,
+        "VentasCOP": 190400000,
+        "CoberturaM2": 56000
+      },
+      "payloadStaging": {
+        "Mes": "Junio",
+        "Ciudad": "Cartagena",
+        "Categoria": "Industrial",
+        "Galones": 1120,
+        "VentasCOP": 190400000,
+        "CoberturaM2": 56000
+      },
+      "varchar_01": "Junio",
+      "varchar_02": "Cartagena",
+      "varchar_03": "Industrial",
+      "numeric_01": 1120,
+      "numeric_02": 190400000,
+      "numeric_03": 56000,
+      "estadoValidacion": "VALIDA",
+      "fechaRegistro": "2026-11-10T14:54:34.685Z"
+    }
+  ],
+  "graficos": [
+    {
+      "graficoId": "gra-001",
+      "proyectoId": "proj-pintuco-corp-001",
+      "datasetId": "dataset-demo-ventas-01",
+      "titulo": "Facturación en COP por Categoría",
+      "subtitulo": "Distribución acumulada de ventas",
+      "tipoGrafico": "BAR_VERTICAL",
+      "ejeXColumna": "Categoria",
+      "ejeYColumna": "VentasCOP",
+      "operacionAgregada": "SUM",
+      "paletaColor": "PINTUCO_NAVY",
+      "ordenDisplay": 1,
+      "anchoColumnas": 6,
+      "datosCalculados": [
+        {
+          "label": "Hogar",
+          "value": 767000000
+        },
+        {
+          "label": "Industrial",
+          "value": 712300000
+        },
+        {
+          "label": "Construcción",
+          "value": 499200000
+        },
+        {
+          "label": "Automotriz",
+          "value": 165600000
+        }
+      ],
+      "fechaCreacion": "2026-11-10T14:54:34.685Z"
+    },
+    {
+      "graficoId": "gra-002",
+      "proyectoId": "proj-pintuco-corp-001",
+      "datasetId": "dataset-demo-ventas-01",
+      "titulo": "Evolución de Galones Despachados por Mes",
+      "subtitulo": "Comportamiento mensual del volumen",
+      "tipoGrafico": "LINE_TREND",
+      "ejeXColumna": "Mes",
+      "ejeYColumna": "Galones",
+      "operacionAgregada": "SUM",
+      "paletaColor": "PINTUCO_AMBER",
+      "ordenDisplay": 2,
+      "anchoColumnas": 6,
+      "datosCalculados": [
+        {
+          "label": "Enero",
+          "value": 2230
+        },
+        {
+          "label": "Febrero",
+          "value": 2270
+        },
+        {
+          "label": "Marzo",
+          "value": 2440
+        },
+        {
+          "label": "Abril",
+          "value": 1680
+        },
+        {
+          "label": "Mayo",
+          "value": 2690
+        },
+        {
+          "label": "Junio",
+          "value": 2700
+        }
+      ],
+      "fechaCreacion": "2026-11-10T14:54:34.685Z"
+    },
+    {
+      "graficoId": "gra-003",
+      "proyectoId": "proj-pintuco-corp-001",
+      "datasetId": "dataset-demo-ventas-01",
+      "titulo": "Cobertura de m² por Ciudad",
+      "subtitulo": "Superficie pintada estimada",
+      "tipoGrafico": "PIE_DISTRIBUTION",
+      "ejeXColumna": "Ciudad",
+      "ejeYColumna": "CoberturaM2",
+      "operacionAgregada": "SUM",
+      "paletaColor": "EMERALD",
+      "ordenDisplay": 3,
+      "anchoColumnas": 12,
+      "datosCalculados": [
+        {
+          "label": "Bogotá D.C.",
+          "value": 258500
+        },
+        {
+          "label": "Medellín",
+          "value": 198500
+        },
+        {
+          "label": "Cali",
+          "value": 94500
+        },
+        {
+          "label": "Barranquilla",
+          "value": 55000
+        },
+        {
+          "label": "Cartagena",
+          "value": 56000
+        },
+        {
+          "label": "Bucaramanga",
+          "value": 38000
+        }
+      ],
+      "fechaCreacion": "2026-11-10T14:54:34.685Z"
+    }
+  ],
+  "dashboards": [
+    {
+      "dashboardId": "dash-001",
+      "proyectoId": "proj-pintuco-corp-001",
+      "nombre": "Dashboard Principal de Ventas y Cobertura",
+      "descripcion": "Vista ejecutiva de métricas e indicadores de gestión comercial Pintuco",
+      "esDefault": true,
+      "totalWidgets": 3,
+      "graficosIds": [
+        "gra-001",
+        "gra-002",
+        "gra-003"
+      ],
+      "creadoPor": "salgadoarevaloleidy@gmail.com",
+      "fechaCreacion": "2026-11-10T14:54:34.685Z",
+      "fechaActualizacion": "2026-11-10T14:54:34.685Z"
+    }
+  ],
+  "auditoria": [
+    {
+      "auditoriaId": "aud-init-001",
+      "proyectoId": "proj-pintuco-corp-001",
+      "usuarioEmail": "salgadoarevaloleidy@gmail.com",
+      "accion": "CREAR_PROYECTO",
+      "entidadAfectada": "DW_PROYECTOS",
+      "idRegistroAfectado": "proj-pintuco-corp-001",
+      "detallesOperacion": "Inicialización de plataforma Data Warehouse Pintuco",
+      "timestampEvento": "2026-11-10T14:54:34.684Z"
+    }
+  ]
+}
